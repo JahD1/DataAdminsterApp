@@ -1,17 +1,21 @@
 package dataAdmin;
 import java.util.Scanner;
 
+
+//Student class represents each student and some basic information
 public class Student {
-	
-		private String firstName;
-		private String lastName;
-		private int gradeYear;
-		private String studentId;
-		private String courses = "";
-		private double tuitionbalance = 0;
-		private static int costOfCourse = 600;
-		public static int id = 1000;
 		
+		private String firstName; // students first name 
+		private String lastName; //students last name 
+		private int gradeYear; // number of years student has been  enrolled
+		private String studentId; // student unique identification number 
+		private String courses = ""; //the courses the student is enrolled in 
+		private double tuitionbalance = 0; // the tuition balance 
+		private static int costOfCourse = 600; // cost of each course
+		public static int id = 1000; // used to make a unique id for each student
+		
+		
+		//constructor prompting to enter students name and grade year 
 		public Student()
 		{
 			Scanner keyboard =new Scanner(System.in);
@@ -25,13 +29,15 @@ public class Student {
 			setStudentId();
 		}
 		
+		//generates student id
 		public void setStudentId()
 		{
-			id++;
+			id = id+1;
 			this.studentId = gradeYear + "" + id;
 			
 		}
 		
+		//enrolls students into courses
 		public void enroll()
 		{
 			String course;
@@ -55,10 +61,12 @@ public class Student {
 			
 		
 }
+		// views tuition balance 
 		public void viewBalance() {
 			System.out.println("Tuition Balance = $"+tuitionbalance);
 		}
 		
+		// pays tuition
 		public void payTuition() {
 			
 			double payment = 0.0;
@@ -76,6 +84,7 @@ public class Student {
 
 			}
 		
+		//shows all the students information
 		public void showStaus(){
 			
 			System.out.println("Name: " +firstName + " " + lastName);
